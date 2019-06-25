@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+OUT_DIR=/data/png
+
+BOX=$1
+if [[ -z $BOX ]]; then
+    echo "USAGE: gentitles WEST,SOUTH,EAST,NORTH"
+    exit 1
+fi
+
+mkdir -p $OUT_DIR
+/usr/src/app/run.sh &>/data/png/tile-server.log &
+
+echo "Waiting for the tile server to start"
+while ! curl localhost &>/dev/null; do
+    sleep 0.2
+    echo -n .
+done
+
+function box {
+    echo "${BOX}" | cut -d, -f${1}
+}
+
+cd tile-generation/tile-fetcher
+node index.js \
+  --host localhost \
+  --port 80 \
+  --style klokantech-basic \
+  --level 0-16 \
+  --west $(box 1) --south $(box 2) --east $(box 3) --north $(box 4) \
+  --dir $OUT_DIR
