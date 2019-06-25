@@ -17,7 +17,7 @@ TODO
 ====
 
   - [ ] Expose generated tile viewer from the container (see [this][html])
-  - [ ] Publish the container to Docker Hub
+  - [x] Publish the container to Docker Hub (publishes automatically)
 
 Credit
 ======
