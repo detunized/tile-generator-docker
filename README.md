@@ -6,12 +6,24 @@ To run simply build the image and run like this:
 
 ```bash
 docker build -t tilegen .
-docker run --rm -it -v $(pwd):/data tilegen -- "12.26,51.849,14.699,52.994"
+docker run --rm -v $(pwd):/data tilegen -- "12.26,51.849,14.699,52.994"
 ```
 
-The last parameter is a bounding box in a CSV "west, south, east, north" format. It's easy to make here by selecting an area on the map on [OpenMapTiles][omp].
+or simply from Docker Hub:
 
-The tiles will be saved to the `./png` folder. If something goes wrong, there's also a log from the [TileServer GL][tsgl].
+```bash
+docker run --rm -v $(pwd):/data detunized/tilegen -- "12.26,51.849,14.699,52.994"
+```
+
+The last parameter is a bounding box in a CSV "west, south, east, north"
+format. It's easy to make here by selecting an area on the map on
+[OpenMapTiles][omp].
+
+The tiles will be saved to the `./png` folder. If something goes wrong,
+there's also a log from the [TileServer GL][tsgl].
+
+There should one `*.mbtiles` file available in the current directory. It's
+gonna be used by the tile server as a source of verctor tiles.
 
 TODO
 ====
