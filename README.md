@@ -16,7 +16,7 @@ The tiles will be saved to the `./png` folder. If something goes wrong, there's 
 TODO
 ====
 
-  - [ ] Expose generated tile viewer from the container (see `tile-fetcher/tile-viewer.html`)
+  - [ ] Expose generated tile viewer from the container (see [this][html])
   - [ ] Publish the container to Docker Hub
 
 Credit
@@ -34,6 +34,7 @@ MIT, see [LICENSE][lic]
 
 
 [omp]: https://openmaptiles.com/extracts/#bounds=12.26,51.849,14.699,52.994
-[tsgl]: klokantech/tileserver-gl
-[tg]: CMU-CREATE-Lab/tile-generation
+[tsgl]: https://github.com/klokantech/tileserver-gl
+[tg]: https://github.com/CMU-CREATE-Lab/tile-generation
+[html]: https://github.com/CMU-CREATE-Lab/tile-generation/blob/master/tile-fetcher/tile-viewer.html
 [lic]: LICENSE
