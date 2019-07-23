@@ -26,7 +26,7 @@ cd tile-generation/tile-fetcher
 node index.js \
   --host localhost \
   --port 80 \
-  --style klokantech-basic \
+  --style klokantech-basic-no-labels \
   --level 0-16 \
   --west $(box 1) --south $(box 2) --east $(box 3) --north $(box 4) \
   --dir $OUT_DIR
